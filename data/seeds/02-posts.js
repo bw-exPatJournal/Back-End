@@ -1,17 +1,17 @@
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex("table_name")
+  return knex("posts")
     .del()
     .then(function() {
       // Inserts seed entries
-      return knex("table_name").insert([
+      return knex("posts").insert([
         {
           id: 1,
           title: "picture of thing1",
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 1
+          traveler_id: 1
         },
         {
           id: 2,
@@ -19,7 +19,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 1
+          traveler_id: 1
         },
         {
           id: 3,
@@ -27,7 +27,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 2
+          traveler_id: 2
         },
         {
           id: 4,
@@ -35,7 +35,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 2
+          traveler_id: 2
         },
         {
           id: 5,
@@ -43,7 +43,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 2
+          traveler_id: 2
         },
         {
           id: 6,
@@ -51,7 +51,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 3
+          traveler_id: 3
         },
         {
           id: 7,
@@ -59,7 +59,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 3
+          traveler_id: 3
         },
         {
           id: 8,
@@ -67,7 +67,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 4
+          traveler_id: 4
         },
         {
           id: 9,
@@ -75,7 +75,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 4
+          traveler_id: 4
         },
         {
           id: 10,
@@ -83,7 +83,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 5
+          traveler_id: 5
         },
         {
           id: 11,
@@ -91,7 +91,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 5
+          traveler_id: 5
         },
         {
           id: 12,
@@ -99,7 +99,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 6
+          traveler_id: 6
         },
         {
           id: 13,
@@ -107,7 +107,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 6
+          traveler_id: 6
         },
         {
           id: 14,
@@ -115,7 +115,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 6
+          traveler_id: 6
         },
         {
           id: 15,
@@ -123,7 +123,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 7
+          traveler_id: 7
         },
         {
           id: 16,
@@ -131,7 +131,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 7
+          traveler_id: 7
         },
         {
           id: 17,
@@ -139,7 +139,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 7
+          traveler_id: 7
         },
         {
           id: 18,
@@ -147,7 +147,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 8
+          traveler_id: 8
         },
         {
           id: 19,
@@ -155,7 +155,7 @@ exports.seed = function(knex) {
           photo: "https://source.unsplash.com/random",
           story: "this is a story",
           details: "here are some details",
-          user_id: 8
+          traveler_id: 8
         }
       ]);
     });

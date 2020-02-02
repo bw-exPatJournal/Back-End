@@ -8,28 +8,23 @@ module.exports = {
 };
 
 function find() {
-  return db("travellers").select(
-    "id",
-    "name",
-    "email",
-    "username",
-    "password",
-    "bio"
-  );
+  return db("traveler as t")
+    .join("posts as p", "p.traveler_id", "t.id")
+    .select("id", "name", "email", "username", "password", "bio");
 }
 
 function findBy(filter) {
-  return db("travellers").where(filter);
+  return db("traveler").where(filter);
 }
 
 async function register(user) {
-  const [id] = await db("travellers").insert(traveller);
+  const [id] = await db("traveler").insert(traveller);
 
   return findById(id);
 }
 
 function findById(id) {
-  return db("travellers")
+  return db("traveler")
     .where({ id })
     .first();
 }
