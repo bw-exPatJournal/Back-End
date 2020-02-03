@@ -17,8 +17,14 @@ function findBy(filter) {
   return db("traveler").where(filter);
 }
 
-async function register(user) {
-  const [id] = await db("traveler").insert(traveller);
+// function getById(id) {
+//   return db('posts').where({id})
+//   .first()
+
+// }
+
+async function register(traveler) {
+  const [id] = await db("traveler").insert(traveler);
 
   return findById(id);
 }

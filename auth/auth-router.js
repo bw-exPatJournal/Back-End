@@ -2,13 +2,13 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Travellers = require("./travelers-model.js");
-const restricted = require("./authenticate-middleware.js");
-const secrets = require("../secrets/secrets.js");
+const {jwtSecret} = require("../secrets/secrets.js");
 
 router.post("/register", (req, res) => {
   let traveler = req.body;
   const hash = bcrypt.hashSync(traveler.password, 10);
-  user.password = hash;
+
+  traveler.password = hash;
 
   Travellers.register(traveler)
     .then(saved => {
@@ -24,12 +24,12 @@ router.post("/login", (req, res) => {
 
   Travellers.findBy({ username })
     .first()
-    .then(traveller => {
-      if (traveller && bcrypt.compareSync(password, traveler.password)) {
+    .then(traveler => {
+      if (traveler && bcrypt.compareSync(password, traveler.password)) {
         const token = generateToken(traveler);
 
-        const decoded = jwt.verify(token, secrets.jwtSecret);
-        console.log(decoded);
+        // const decoded = jwt.verify(token, secrets.jwtSecret);
+        // console.log(decoded);
 
         res.status(200).json({
           message: `Welcome ${traveler.username}!`,
@@ -47,22 +47,19 @@ router.post("/login", (req, res) => {
 function generateToken(traveler) {
   const payload = {
     subject: traveler.id,
-    username: traveler.username
+    name: traveler.name,
+    username: traveler.username,
+    bio: traveler.bio
+
   };
 
   const options = {
-    expiresIn: "1d"
+    expiresIn: "7d"
   };
 
-  return jwt.sign(payload, secrets.jwtSecret, options);
+  return jwt.sign(payload, jwtSecret, options);
 }
 
-router.get("/users", restricted, (req, res) => {
-  Travellers.find()
-    .then(travellers => {
-      res.json({ loggedInTraveler: req.username, travelers });
-    })
-    .catch(err => res.send(err));
-});
+
 
 module.exports = router;
