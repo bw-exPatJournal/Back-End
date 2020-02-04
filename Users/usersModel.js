@@ -2,9 +2,9 @@ const db = require('../data/dbConfig');
 
 
 module.exports = {
-    find,
+    find
   };
 
   function find() {
-    return db('user').select("id", "name", "email", "username", "password", "bio");
+    return db('traveler').select("id", "name", "email", "username", "password", "bio");
 }
