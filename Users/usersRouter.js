@@ -4,12 +4,14 @@ const restricted = require("../auth/authenticate-middleware");
 const User = require('./usersModel');
 
 
-router.get("/", restricted, (req, res) => {
+router.get("/users", restricted, (req, res) => {
     User.find()
       .then(traveler => {
-        res.json(traveler);
+          console.log(res)
+        res.status(201).json(traveler);
+        
       })
-      .catch(err => res.send(err));
+      .catch(err => res.send(err))
   });
 
 
