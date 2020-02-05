@@ -23,6 +23,36 @@ router.get("/", restricted, (req, res) => {
   });
 
 
+  router.put('/:id', (req,res) => {
+    const changes = req.body
+    User.update(req.params.id, changes)
+    .then(user => {
+        res.status(200).json(user)
+    })
+    .catch(error => {
+        res.status(500).json({error: "User can't be updated"})
+    })
+})
+
+router.delete('/:id', (req,res) => {
+    User.remove(req.params.id)
+    .then(post => {
+        res.status(200).json(post)
+    })
+    .catch(error => {
+        res.status(500).json({error: 'User no longer exists'})
+    })
+})
+
+
+
+
+
+
+
+
+
+
 
   module.exports = router;
 
