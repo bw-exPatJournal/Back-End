@@ -5,10 +5,10 @@ const server = require('../api/server');
 
 
 const user = {
-    name: "name1",
+    name: "name2",
     email: "email@blah.com",
-    username: "username1",
-    password: "test1",
+    username: "username2",
+    password: "test2",
     bio: "I am a human person"
 }
 
