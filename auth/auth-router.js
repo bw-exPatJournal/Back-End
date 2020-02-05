@@ -32,7 +32,7 @@ router.post("/login", (req, res) => {
         // console.log(decoded);
 
         res.status(200).json({
-          message: `Welcome ${traveler.username}!`,
+          message: traveler.id,
           token: token
         });
       } else {
