@@ -30,6 +30,11 @@ describe('Post /', function() {
     })
 })
 
-// decribe('Put /:id', function() {
-
+// describe('Put /:id', function() {
+//     it('should edit a post', function(){
+//         return request(server).put('/api/posts')
+//         .then(res => {
+//             expect(res.status).toBe(200)
+//         })
+//     })
 // })
