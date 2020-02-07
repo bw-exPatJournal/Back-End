@@ -7,7 +7,7 @@ exports.seed = function(knex) {
       return knex("traveler").insert([
         {
           id: 1,
-          name: "Andrew",
+          name: "Ackers",
           email: "acker@blah.com",
           username: "ack",
           password: "test",
@@ -15,11 +15,11 @@ exports.seed = function(knex) {
         },
         {
           id: 2,
-          name: "Anna",
-          email: "bamf@blah.com",
-          username: "bamf",
+          name: "Aaron",
+          email: "ayayron@blah.com",
+          username: "ayayron",
           password: "test1",
-          bio: "I am an italian human person"
+          bio: "I am a human person with corona virus"
         },
         {
           id: 3,
@@ -31,11 +31,11 @@ exports.seed = function(knex) {
         },
         {
           id: 4,
-          name: "Aaron",
-          email: "ayayron@blah.com",
-          username: "ron",
+          name: "Anna",
+          email: "bamf@blah.com",
+          username: "bamf",
           password: "test3",
-          bio: "I am a human person with corona virus"
+          bio: "I am also a person"
         },
         {
           id: 5,
